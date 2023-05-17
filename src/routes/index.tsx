@@ -10,10 +10,6 @@ export const AppRoutes = createBrowserRouter(
       element: <App />,
     },
     {
-      path: "/pagina-inicial",
-      element: <Button variant='contained' color='secondary'>Hello</Button>,
-    },
-    {
       path: "*",
       element: <Navigate to = '/'/>,
     },

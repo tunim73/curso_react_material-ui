@@ -1,9 +1,19 @@
+import { Button } from "@mui/material"
+import { useThemeContext } from "./shared/contexts/themeContext"
 
 function App() {
 
+  const {toogleTheme} = useThemeContext()
+
   return (
     <>
-      <h1>Hello World </h1>
+      <Button
+        onClick={toogleTheme}
+        variant='contained'
+        color='primary'
+      >
+        Troca de Tema
+      </Button>
     </>
   )
 }
