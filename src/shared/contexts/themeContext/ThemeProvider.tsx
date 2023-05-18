@@ -11,7 +11,7 @@ export const AppThemeProvider = ({ children }: IChildren) => {
 
   const toogleTheme = useCallback(() => {
     setThemeName((oldThemeName) =>
-      oldThemeName === 'light' ? 'dark' : 'light',
+      oldThemeName === 'light' ? 'dark' : 'light'
     );
   }, []);
 

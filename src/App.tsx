@@ -1,14 +1,14 @@
 import { Button } from '@mui/material';
-import { useThemeContext } from './shared/contexts/themeContext';
 import { MenuLateral } from './shared/components/menu-lateral/MenuLateral';
+import { useThemeContext, useDrawerContext } from './shared/contexts';
 
 function App() {
   const { toogleTheme } = useThemeContext();
-
+  const { toggleDrawerOpen } = useDrawerContext();
   return (
     <>
       <MenuLateral>
-        <Button onClick={toogleTheme} variant="contained" color="primary">
+        <Button onClick={toggleDrawerOpen} variant="contained" color="primary">
           Troca de Tema
         </Button>
       </MenuLateral>
