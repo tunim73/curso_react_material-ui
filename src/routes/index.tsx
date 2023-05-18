@@ -7,6 +7,10 @@ export const AppRoutes = createBrowserRouter([
     element: <App />,
   },
   {
+    path: '/pagina-inicial',
+    element: <h1>Pagina Inicial</h1>,
+  },
+  {
     path: '*',
     element: <Navigate to="/" />,
   },
