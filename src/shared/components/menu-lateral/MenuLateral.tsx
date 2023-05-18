@@ -3,7 +3,6 @@ import {
   Box,
   Divider,
   Drawer,
-  List,
   useMediaQuery,
   useTheme,
 } from '@mui/material';
@@ -16,15 +15,15 @@ export const MenuLateral = ({ children }: IChildren) => {
   const theme = useTheme();
   const smDown = useMediaQuery(theme.breakpoints.down('sm'));
 
-  const { isDrawerOpen, toggleDrawerOpen } = useDrawerContext();
+  const { isDrawerOpen, toggleDrawerOpen, drawerOptions } = useDrawerContext();
 
   /* 
    Eu faria assim,
-   ou faria também sem o on Click, 
+   ou faria também sem o onClick, 
    deixando para fazer tal lógica no onCLick do Map e, com isso,
    poderia colocar esse listMenu, num arquivo json - como os datas 
    da byteSocial
-  */
+
   const listMenu = [
     {
       toPath: '/',
@@ -39,6 +38,7 @@ export const MenuLateral = ({ children }: IChildren) => {
       onClick: smDown ? toggleDrawerOpen : undefined,
     },
   ];
+  */
 
   return (
     <>
@@ -69,13 +69,13 @@ export const MenuLateral = ({ children }: IChildren) => {
           <Divider />
 
           <Box flex={1}>
-            {listMenu.map((e, index) => (
+            {drawerOptions.map((e, index) => (
               <ListItemLinkMenu
                 key={index}
                 toPath={e.toPath}
                 icon={e.icon}
                 label={e.label}
-                onClick={e.onClick}
+                onClick={smDown ? toggleDrawerOpen : undefined}
               />
             ))}
           </Box>
@@ -87,4 +87,3 @@ export const MenuLateral = ({ children }: IChildren) => {
     </>
   );
 };
-

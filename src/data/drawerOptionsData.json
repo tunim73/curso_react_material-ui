@@ -1,0 +1,12 @@
+[
+  {
+    "toPath": "/",
+    "icon": "home",
+    "label": "Página Inicial"
+  },
+  {
+    "toPath": "/cidades",
+    "icon": "star",
+    "label": "cidades"
+  }
+]
