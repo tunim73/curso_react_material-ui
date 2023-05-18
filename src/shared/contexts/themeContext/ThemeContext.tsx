@@ -5,6 +5,6 @@ export interface IThemeContext {
     toogleTheme: () => void; //alternaTema
 }
 
-export const ThemeContext = createContext<IThemeContext>(null!);
+export const ThemeContext = createContext<IThemeContext>({} as IThemeContext );
 
 export const useThemeContext = () => useContext(ThemeContext);
