@@ -7,8 +7,8 @@ import {
   useTheme,
 } from '@mui/material';
 import { deepPurple } from '@mui/material/colors';
-import { IChildren } from '../../../types/IChildren';
-import { useDrawerContext } from '../../contexts';
+import { IChildren } from 'types';
+import { useDrawerContext } from 'shared/contexts';
 import { ListItemLinkMenu } from '../list-item-link-menu/ListItemLinkMenu';
 
 export const MenuLateral = ({ children }: IChildren) => {
@@ -16,29 +16,6 @@ export const MenuLateral = ({ children }: IChildren) => {
   const smDown = useMediaQuery(theme.breakpoints.down('sm'));
 
   const { isDrawerOpen, toggleDrawerOpen, drawerOptions } = useDrawerContext();
-
-  /* 
-   Eu faria assim,
-   ou faria também sem o onClick, 
-   deixando para fazer tal lógica no onCLick do Map e, com isso,
-   poderia colocar esse listMenu, num arquivo json - como os datas 
-   da byteSocial
-
-  const listMenu = [
-    {
-      toPath: '/',
-      icon: 'home',
-      label: 'Página Inicial',
-      onClick: smDown ? toggleDrawerOpen : undefined,
-    },
-    {
-      toPath: 'cidades',
-      icon: 'star',
-      label: 'cidades',
-      onClick: smDown ? toggleDrawerOpen : undefined,
-    },
-  ];
-  */
 
   return (
     <>
@@ -87,3 +64,26 @@ export const MenuLateral = ({ children }: IChildren) => {
     </>
   );
 };
+
+/* 
+  Eu faria assim,
+  ou faria também sem o onClick, 
+  deixando para fazer tal lógica no onCLick do Map e, com isso,
+  poderia colocar esse listMenu, num arquivo json - como os datas 
+  da byteSocial
+
+  const listMenu = [
+    {
+      toPath: '/',
+      icon: 'home',
+      label: 'Página Inicial',
+      onClick: smDown ? toggleDrawerOpen : undefined,
+    },
+    {
+      toPath: 'cidades',
+      icon: 'star',
+      label: 'cidades',
+      onClick: smDown ? toggleDrawerOpen : undefined,
+    },
+  ];
+*/

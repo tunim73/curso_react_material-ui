@@ -5,8 +5,9 @@ import {
   ListItemText,
 } from '@mui/material';
 import { useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
-import { IDrawerOptionsData } from '../../../types';
-export interface IListItemMenuData {
+import { IDrawerOptionsData } from 'types';
+
+interface IListItemMenuData extends IDrawerOptionsData {
   onClick?: () => void;
 }
 
@@ -15,7 +16,7 @@ export const ListItemLinkMenu = ({
   icon,
   label,
   onClick,
-}: IListItemMenuData & IDrawerOptionsData) => {
+}: IListItemMenuData) => {
   const navigate = useNavigate();
 
   /* 

@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
-import { IChildren } from '../../../types/IChildren';
+import { IChildren } from 'types';
 import { DrawerContext } from './DrawerContext';
-import { IDrawerOptionsData } from '../../../types';
+import { IDrawerOptionsData } from 'types';
 
 export const AppDrawerProvider = ({ children }: IChildren) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);

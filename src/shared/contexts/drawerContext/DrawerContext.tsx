@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react';
-import { IDrawerOptionsData } from '../../../types';
+import { IDrawerOptionsData } from 'types';
 
 export interface IDrawerContextData {
   isDrawerOpen: boolean;

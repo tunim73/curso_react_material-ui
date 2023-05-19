@@ -1,7 +1,7 @@
 import { Box, ThemeProvider } from '@mui/material';
-import { IChildren } from '../../../types/IChildren';
+import { IChildren } from 'types';
 import { ThemeContext } from './ThemeContext';
-import { LightTheme, DarkTheme } from '../../theme';
+import { DarkTheme, LightTheme } from 'shared/theme';
 import { useCallback, useMemo, useState } from 'react';
 import { IThemeContext } from './ThemeContext';
 

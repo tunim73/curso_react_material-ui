@@ -1,6 +1,6 @@
 import { Button } from '@mui/material';
-import { MenuLateral } from './shared/components/menu-lateral/MenuLateral';
-import { useThemeContext, useDrawerContext } from './shared/contexts';
+import { MenuLateral } from 'shared/components/menu-lateral/MenuLateral';
+import { useThemeContext, useDrawerContext } from 'shared/contexts';
 
 function App() {
   const { toogleTheme } = useThemeContext();
