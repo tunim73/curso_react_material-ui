@@ -1,19 +1,16 @@
-import { Button } from '@mui/material';
-import { MenuLateral } from 'shared/components/menu-lateral/MenuLateral';
-import { useThemeContext, useDrawerContext } from 'shared/contexts';
+import { RouterProvider } from 'react-router-dom';
+import { AppRoutes } from './routes/index.js';
+import { useDrawerContext } from './shared/contexts/index.js';
+import { useEffect } from 'react';
+import listMenu from './data/drawerOptionsData.json';
 
-function App() {
-  const { toogleTheme } = useThemeContext();
-  const { toggleDrawerOpen } = useDrawerContext();
-  return (
-    <>
-      <MenuLateral>
-        <Button onClick={toggleDrawerOpen} variant="contained" color="primary">
-          Troca de Tema
-        </Button>
-      </MenuLateral>
-    </>
-  );
-}
+export const AppProvider = () => {
+  const { routes } = AppRoutes();
+  const { setDrawerOptions } = useDrawerContext();
 
-export default App;
+  useEffect(() => {
+    setDrawerOptions(listMenu);
+  }, []);
+
+  return <RouterProvider router={routes} />;
+};

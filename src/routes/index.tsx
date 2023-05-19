@@ -1,19 +1,26 @@
 import { Navigate, createBrowserRouter } from 'react-router-dom';
-import App from '../App';
+import { Dashboard } from 'pages';
+import { DefaultPageWithMenu } from 'shared/layouts';
 
 export const AppRoutes = () => {
   const routes = createBrowserRouter([
     {
       path: '/',
-      element: <App />,
+      element: <Navigate to="/pagina-inicial" />,
     },
     {
-      path: '/pagina-inicial',
-      element: <h1>Pagina Inicial</h1>,
+      path: '/',
+      element: <DefaultPageWithMenu />,
+      children: [
+        {
+          path: 'pagina-inicial',
+          element: <Dashboard />,
+        },
+      ],
     },
     {
       path: '*',
-      element: <Navigate to="/" />,
+      element: <Navigate to="/pagina-inicial" />,
     },
   ]);
 
