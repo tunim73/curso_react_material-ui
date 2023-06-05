@@ -3,12 +3,16 @@ import {
   Box,
   Divider,
   Drawer,
+  Icon,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
   useMediaQuery,
   useTheme,
 } from '@mui/material';
 import { deepPurple } from '@mui/material/colors';
 import { IChildren } from 'types';
-import { useDrawerContext } from 'shared/contexts';
+import { useDrawerContext, useThemeContext } from 'shared/contexts';
 import { ListItemLinkMenu } from '../list-item-link-menu/ListItemLinkMenu';
 
 export const MenuLateral = ({ children }: IChildren) => {
@@ -16,6 +20,8 @@ export const MenuLateral = ({ children }: IChildren) => {
   const smDown = useMediaQuery(theme.breakpoints.down('sm'));
 
   const { isDrawerOpen, toggleDrawerOpen, drawerOptions } = useDrawerContext();
+
+  const { toogleTheme } = useThemeContext();
 
   return (
     <>
@@ -55,6 +61,15 @@ export const MenuLateral = ({ children }: IChildren) => {
                 onClick={smDown ? toggleDrawerOpen : undefined}
               />
             ))}
+          </Box>
+
+          <Box>
+            <ListItemButton onClick={toogleTheme}>
+              <ListItemIcon>
+                <Icon>dark_mode</Icon>
+              </ListItemIcon>
+              <ListItemText primary={'Alternar Tema'} />
+            </ListItemButton>
           </Box>
         </Box>
       </Drawer>
