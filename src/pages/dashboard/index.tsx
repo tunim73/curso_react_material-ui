@@ -5,7 +5,7 @@ export const Dashboard = () => {
   return (
     <BasePageLayout
       title="Dashboard"
-      toolBar={<FerramentaDetalhes></FerramentaDetalhes> }>
+      toolBar={<FerramentaDetalhes mostrarBotaoSalvarEFechar ></FerramentaDetalhes> }>
       Teste
     </BasePageLayout>
   );
